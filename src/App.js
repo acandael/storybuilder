@@ -1,11 +1,13 @@
 import React from 'react';
-import ImageUploader from './ImageUploader/ImageUploader';
+import Story from './components/Story/Story';
+import NavBar from './components/Nav/NavBar';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <ImageUploader />
+    <div className="app">
+      <NavBar />
+      <Story />
     </div>
   );
 }
