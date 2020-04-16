@@ -124,10 +124,10 @@ function ImageUploader(props) {
           Open File Dialog
         </button>
       </div>
-      <aside>
+      {/* <aside>
         <h4>Files</h4>
         <ul>{filepath}</ul>
-      </aside>
+      </aside> */}
       <aside style={thumbsContainer}>{thumbs}</aside>
     </div>
   );

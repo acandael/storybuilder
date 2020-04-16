@@ -32,12 +32,7 @@
   outline: solid 2px #e2e8f0;
 }
 
-.text-gray {
-  color: #738694;
-}
-
 .editable-input .text-black {
-  color: #202b33;
   font-size: 28px;
   font-weight: 700;
 }

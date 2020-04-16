@@ -12,3 +12,15 @@ body {
 .container {
   padding: 0 50px;
 }
+
+.text-gray {
+  color: #738694;
+}
+
+.text-black {
+  color: #202b33;
+}
+
+h1 {
+  text-align: center;
+}
