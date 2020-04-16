@@ -1,5 +1,5 @@
 .editable-section {
-  margin: 20px;
+  margin: 20px 0;
 }
 
 .editable-section input[type='text'] {
@@ -17,7 +17,6 @@
 .editable-input {
   height: 38px;
   width: 400px;
-  padding: 5px;
 }
 
 .editable-input:hover {

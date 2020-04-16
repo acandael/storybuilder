@@ -116,7 +116,7 @@ function ImageUploader(props) {
   ));
 
   return (
-    <div className="container">
+    <>
       <div {...getRootProps({ style })}>
         <input {...getInputProps()} />
         <p>Drag 'n' drop some files here</p>
@@ -124,12 +124,9 @@ function ImageUploader(props) {
           Open File Dialog
         </button>
       </div>
-      {/* <aside>
-        <h4>Files</h4>
-        <ul>{filepath}</ul>
-      </aside> */}
+
       <aside style={thumbsContainer}>{thumbs}</aside>
-    </div>
+    </>
   );
 }
 

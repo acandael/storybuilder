@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
-import Story from './components/Story/Story';
-import Editable from './components/Editable/Editable';
+import Story from '../Story/Story';
+import Editable from '../Editable/Editable';
 
 export const StoryPage = () => {
   const inputRef = useRef();
@@ -8,7 +8,7 @@ export const StoryPage = () => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   return (
-    <div>
+    <div class="container">
       <form>
         <Editable text={title} placeholder="Write a task name" type="input">
           <input
@@ -39,3 +39,5 @@ export const StoryPage = () => {
     </div>
   );
 };
+
+export default StoryPage;

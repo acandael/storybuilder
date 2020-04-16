@@ -1,11 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export const StoryList = () => {
   return (
     <div className="story-list">
       <h1>My Stories</h1>
       <div className="story">
-        <h2 className="text-black">A Day At The Races</h2>
+        <h2 className="text-black">
+          <Link to="/storypage">A Day At The Races</Link>
+        </h2>
         <p className="text-gray">2018</p>
         <img src="https://via.placeholder.com/150" alt="some picture" />
       </div>

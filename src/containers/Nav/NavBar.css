@@ -4,6 +4,12 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 50px;
+  padding-left: 85px;
+  padding-right: 85px;
+}
+
+.navbar a {
+  color: #fff;
 }
 
 .logo {

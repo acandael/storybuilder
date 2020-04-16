@@ -1,18 +1,29 @@
 import React from 'react';
 
-import NavBar from './components/Nav/NavBar';
+import NavBar from './containers/Nav/NavBar';
 import StoryList from './containers/StoryList/StoryList';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import StoryPage from './components/StoryPage/StoryPage';
 
 import './App.css';
 
 function App() {
   return (
-    <div className="app">
-      <NavBar />
-      <div className="container">
-        <StoryList />
+    <Router>
+      <div className="app">
+        <NavBar />
+        <div className="container">
+          <Switch>
+            <Route path="/storypage">
+              <StoryPage />
+            </Route>
+            <Route path="/">
+              <StoryList />
+            </Route>
+          </Switch>
+        </div>
       </div>
-    </div>
+    </Router>
   );
 }
 
