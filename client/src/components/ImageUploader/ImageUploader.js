@@ -77,6 +77,7 @@ function ImageUploader(props) {
     noClick: true,
     noKeyboard: true,
     onDrop: (acceptedFiles) => {
+      props.setImages(acceptedFiles);
       setFiles(
         acceptedFiles.map((file) =>
           Object.assign(file, {

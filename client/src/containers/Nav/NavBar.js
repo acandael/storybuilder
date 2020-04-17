@@ -10,7 +10,7 @@ export const NavBar = () => {
           <Link to="/">StoryBuilder</Link>
         </span>
       </div>
-      <ul class="nav">
+      <ul className="nav">
         <li>My Stories</li>
       </ul>
     </div>

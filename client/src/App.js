@@ -7,6 +7,8 @@ import StoryPage from './components/StoryPage/StoryPage';
 
 import './App.css';
 
+import { getStories, postStory } from './ApiService';
+
 function App() {
   return (
     <Router>
