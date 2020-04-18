@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 import NavBar from './containers/Nav/NavBar';
 import StoryList from './containers/StoryList/StoryList';
@@ -7,9 +7,15 @@ import StoryPage from './components/StoryPage/StoryPage';
 
 import './App.css';
 
-import { getStories, postStory } from './ApiService';
+import { getStories } from './ApiService';
 
 function App() {
+  const [stories, setStories] = useState([]);
+
+  useEffect(() => {
+    getStories().then((stories) => setStories(stories));
+  }, []);
+
   return (
     <Router>
       <div className="app">
@@ -20,7 +26,7 @@ function App() {
               <StoryPage />
             </Route>
             <Route path="/">
-              <StoryList />
+              <StoryList stories={stories} />
             </Route>
           </Switch>
         </div>

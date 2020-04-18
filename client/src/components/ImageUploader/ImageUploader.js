@@ -74,8 +74,6 @@ function ImageUploader(props) {
     open,
   } = useDropzone({
     accept: 'image/*',
-    noClick: true,
-    noKeyboard: true,
     onDrop: (acceptedFiles) => {
       props.setImages(acceptedFiles);
       setFiles(
@@ -123,9 +121,6 @@ function ImageUploader(props) {
       <div {...getRootProps({ style })}>
         <input {...getInputProps()} />
         <p>Drag 'n' drop some files here</p>
-        <button className="open-dialog" type="button" onClick={open}>
-          Open File Dialog
-        </button>
       </div>
 
       <aside style={thumbsContainer}>{thumbs}</aside>

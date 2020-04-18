@@ -4,6 +4,8 @@ import Editable from '../Editable/Editable';
 import { Image, CloudinaryContext } from 'cloudinary-react';
 import { postStory } from '../../ApiService';
 
+import './StoryPage.css';
+
 export const StoryPage = () => {
   const titleRef = useRef();
   const yearRef = useRef();
@@ -93,7 +95,12 @@ export const StoryPage = () => {
           />
         </Editable>
         <ImageUploader setImages={setImages} />
-        <input type="submit" name="Save" onClick={onSubmit} />
+        <input
+          type="submit"
+          className="submit-story"
+          name="Save"
+          onClick={onSubmit}
+        />
       </form>
     </>
   );
