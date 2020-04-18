@@ -4,9 +4,9 @@ import Editable from '../Editable/Editable';
 import { Image, CloudinaryContext } from 'cloudinary-react';
 import { postStory } from '../../ApiService';
 
-import './StoryPage.css';
+import './AddStory.css';
 
-export const StoryPage = () => {
+export const AddStory = () => {
   const titleRef = useRef();
   const yearRef = useRef();
   const descriptionRef = useRef();
@@ -106,4 +106,4 @@ export const StoryPage = () => {
   );
 };
 
-export default StoryPage;
+export default AddStory;

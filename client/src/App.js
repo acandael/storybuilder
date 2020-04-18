@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import NavBar from './containers/Nav/NavBar';
 import StoryList from './containers/StoryList/StoryList';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import StoryPage from './components/StoryPage/StoryPage';
+import AddStory from './components/AddStory/AddStory';
 
 import './App.css';
 
@@ -23,7 +23,7 @@ function App() {
         <div className="container">
           <Switch>
             <Route path="/storypage">
-              <StoryPage />
+              <AddStory />
             </Route>
             <Route path="/">
               <StoryList stories={stories} />

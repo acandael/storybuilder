@@ -4,6 +4,10 @@ export function getStories() {
   return fetchRequest('/stories');
 }
 
+export function getStory(id) {
+  return fetchRequest(`/stories/${id}`);
+}
+
 export function postStory(body) {
   return fetchRequest('/stories', {
     method: 'POST',
