@@ -7,10 +7,10 @@ export const StoryItem = ({ story }) => {
   return (
     <div class="story">
       <h2 className="text-black">
-        <Link to="/storypage">{story.title}</Link>
+        <Link to={`/stories/${story._id}`}>{story.title}</Link>
       </h2>
       <p className="text-gray">{story.year}</p>
-      <Link to="/storypage">
+      <Link to={`/stories/${story._id}`}>
         <img
           src={story.photos[0]}
           className="storyPicture"

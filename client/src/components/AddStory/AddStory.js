@@ -1,8 +1,8 @@
 import React, { useRef, useState } from 'react';
 import ImageUploader from '../ImageUploader/ImageUploader';
 import Editable from '../Editable/Editable';
-import { Image, CloudinaryContext } from 'cloudinary-react';
 import { postStory } from '../../ApiService';
+import { useHistory } from 'react-router-dom';
 
 import './AddStory.css';
 
@@ -15,6 +15,7 @@ export const AddStory = () => {
   const [description, setDescription] = useState('');
   const [images, setImages] = useState([]);
   const [story, setStory] = useState([]);
+  let history = useHistory();
 
   const CLOUDINARY_UPLOAD_PRESET = 'zizw0rzd';
   const CLOUDINARY_UPLOAD_URL =
@@ -42,9 +43,12 @@ export const AddStory = () => {
         .catch((err) => console.error(err));
     });
     const images_url = await Promise.all(promises_img);
-    console.log(images_url);
+
     // send all the data to backend including url's from cloudinary
     createStory(title, description, year, images_url);
+
+    // redirect to storiespage
+    history.push('/stories');
   };
 
   function createStory(title, description, year, photos) {
@@ -56,7 +60,7 @@ export const AddStory = () => {
   return (
     <>
       <form createStory={createStory}>
-        <Editable text={title} placeholder="Write a task name" type="input">
+        <Editable text={title} placeholder="Write a title" type="input">
           <input
             type="text"
             name="title"
@@ -68,13 +72,13 @@ export const AddStory = () => {
         </Editable>
         <Editable
           text={year}
-          placeholder="what year was this event"
+          placeholder="What year was this story"
           type="input"
         >
           <input
             type="text"
             name="year"
-            placeholder="Write a task name"
+            placeholder="Describe the story"
             childRef={yearRef}
             value={year}
             onChange={(e) => setYear(e.target.value)}

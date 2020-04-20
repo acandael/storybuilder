@@ -24,10 +24,13 @@ body {
 h1 {
   text-align: center;
   color: #394b59;
+  margin-bottom: 40px;
 }
 
 h2 {
   color: #394b59;
+  font-size: 16px;
+  font-weight: 600;
 }
 
 h2 a {
@@ -36,4 +39,15 @@ h2 a {
 
 a {
   color: #394b59;
+}
+
+button {
+  background: #394b59;
+  color: #fff;
+  padding: 10px 20px;
+  outline: none;
+}
+
+button:hover {
+  background: #5c7080;
 }

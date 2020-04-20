@@ -1,18 +1,12 @@
+.stories {
+  display: flex;
+}
+
 .storyPicture {
   width: 200px;
 }
 
 .story {
-  margin-bottom: 40px;
-}
-
-button.addStory {
-  background: #394b59;
-  color: #fff;
-  padding: 10px 20px;
-  outline: none;
-}
-
-button.addStory:hover {
-  background: #5c7080;
+  margin: 40px 40px;
+  margin-left: 0;
 }

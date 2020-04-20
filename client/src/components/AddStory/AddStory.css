@@ -4,3 +4,7 @@
   padding: 10px 20px;
   outline: none;
 }
+
+.submit-story:hover {
+  background: #5c7080;
+}

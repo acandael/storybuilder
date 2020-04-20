@@ -3,6 +3,7 @@ const Story = require('../models/story');
 async function getStories(req, res) {
   try {
     const stories = await Story.find();
+    console.log(stories);
     res.status(200);
     res.json(stories);
   } catch (err) {

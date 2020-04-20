@@ -18,8 +18,40 @@ export function postStory(body) {
   });
 }
 
+export function register(body) {
+  return fetchRequest('/user/signup', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(body),
+  });
+}
+
+export function login(body) {
+  return fetchRequest('/user/login', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(body),
+  });
+}
+
 function fetchRequest(path, options) {
-  return fetch(BASE_URL + path, options)
+  const token = localStorage.getItem('token');
+
+  const newOptions = {
+    ...options,
+    headers: {
+      Authorization: token ? `Bearer ${token}` : '',
+      ...options?.headers,
+    },
+  };
+
+  console.log(newOptions);
+
+  return fetch(BASE_URL + path, newOptions)
     .then((res) => (res.status <= 400 ? res : Promise.reject(res)))
     .then((res) => res.json())
     .catch((err) => {

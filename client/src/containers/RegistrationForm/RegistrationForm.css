@@ -1,0 +1,24 @@
+.registration-form {
+  display: flex;
+  justify-content: center;
+}
+
+.registration-form label {
+  margin-bottom: 10px;
+  display: block;
+  font-weight: 600;
+}
+
+.registration-form input {
+  height: 38px;
+  width: 300px;
+  font-size: 16px;
+}
+
+.form-group {
+  margin: 20px 0;
+}
+
+.login-message {
+  margin-top: 20px;
+}

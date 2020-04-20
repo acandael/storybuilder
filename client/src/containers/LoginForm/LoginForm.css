@@ -1,0 +1,30 @@
+.login-form {
+  display: flex;
+  justify-content: center;
+}
+
+.login-form label {
+  margin-bottom: 10px;
+  display: block;
+  font-weight: 600;
+}
+
+.login-form input {
+  height: 38px;
+  width: 300px;
+  font-size: 16px;
+}
+
+.form-group {
+  margin: 20px 0;
+}
+
+.register-message {
+  margin-top: 20px;
+  display: block;
+}
+
+.login-text {
+  color: #5c7080;
+  cursor: pointer;
+}
