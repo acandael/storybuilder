@@ -1,6 +1,7 @@
-import React, { useState, useEffect, Component } from 'react';
+import React, { useState } from 'react';
 
 import NavBar from './containers/Nav/NavBar';
+import Footer from './containers/Footer/footer';
 import StoryList from './containers/StoryList/StoryList';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import AddStory from './components/AddStory/AddStory';
@@ -16,18 +17,24 @@ import './App.css';
 function App() {
   const [errorMessage, updateErrorMessage] = useState(null);
 
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
   return (
     <Router>
       <div className="app">
-        <NavBar />
+        <NavBar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
         <div className="container">
           <Switch>
+            <PublicRoute path="/login">
+              <LoginForm
+                setIsLoggedIn={setIsLoggedIn}
+                showError={updateErrorMessage}
+              />
+            </PublicRoute>
             <PublicRoute restricted={true} path="/register">
               <RegistrationForm showError={updateErrorMessage} />
             </PublicRoute>
-            <PublicRoute path="/login">
-              <LoginForm showError={updateErrorMessage} />
-            </PublicRoute>
+
             <PrivateRoute component={ShowStory} path="/stories/:id" exact />
             <Route path="/storypage">
               <AddStory />
@@ -39,6 +46,7 @@ function App() {
             hideError={updateErrorMessage}
           />
         </div>
+        <Footer />
       </div>
     </Router>
   );

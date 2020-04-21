@@ -28,6 +28,7 @@ export const LoginForm = (props) => {
     login(payload).then(function (response) {
       if ((response.message = 'Auth successfull')) {
         localStorage.setItem('token', response.token);
+        props.setIsLoggedIn(true);
         setState((prevState) => ({
           ...prevState,
           successMessage: 'Login successful. Redirecting to home page..',

@@ -71,7 +71,6 @@ function ImageUploader(props) {
     isDragAccept,
     isDragReject,
     acceptedFiles,
-    open,
   } = useDropzone({
     accept: 'image/*',
     onDrop: (acceptedFiles) => {

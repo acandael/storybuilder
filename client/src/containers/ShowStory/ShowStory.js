@@ -10,7 +10,7 @@ export const ShowStory = () => {
 
   useEffect(() => {
     getStory(id).then((story) => setStory(story));
-  }, []);
+  }, [id]);
 
   return (
     <div>
@@ -18,13 +18,12 @@ export const ShowStory = () => {
         {story.title} ({story.year})
       </h1>
       <p>{story.description}</p>
-      <div class="photo-grid">
+      <div className="photo-grid">
         {story.photos &&
-          story.photos.map((photo) => {
-            return <img key={story._id} src={photo} />;
+          story.photos.map((photo, index) => {
+            return <img key={index} src={photo} alt="" />;
           })}
       </div>
-      <button className="edit-story">Edit Story</button>
     </div>
   );
 };

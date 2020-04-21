@@ -9,7 +9,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.app {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
 .container {
+  flex: 1;
   padding: 0 90px;
 }
 
@@ -24,7 +31,7 @@ body {
 h1 {
   text-align: center;
   color: #394b59;
-  margin-bottom: 40px;
+  margin-top: 0;
 }
 
 h2 {

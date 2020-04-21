@@ -14,8 +14,6 @@ export const RegistrationForm = (props) => {
 
   let history = useHistory();
 
-  const [created, setCreated] = useState(false);
-
   const handleChange = (e) => {
     const { id, value } = e.target;
     setState((prevState) => ({
@@ -50,7 +48,7 @@ export const RegistrationForm = (props) => {
               successMessage:
                 'Registration successfull. Redirecting to home page...',
             }));
-            setCreated(true);
+
             props.showError(null);
           } else {
             props.showError('Some error occured');
@@ -63,8 +61,6 @@ export const RegistrationForm = (props) => {
       props.showError('Please enter valid email and password');
     }
   };
-
-  const redirectToHome = () => {};
 
   const redirectToLogin = () => {
     history.push('/login');

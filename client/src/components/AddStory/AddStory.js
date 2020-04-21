@@ -17,20 +17,19 @@ export const AddStory = () => {
   const [story, setStory] = useState([]);
   let history = useHistory();
 
-  const CLOUDINARY_UPLOAD_PRESET = 'zizw0rzd';
-  const CLOUDINARY_UPLOAD_URL =
-    'https://api.cloudinary.com/v1_1/dsrrx2qm9/image/upload';
-
   const onSubmit = async (e) => {
     // post images to cloudinary
     e.preventDefault();
     const promises_img = images.map((image) => {
       const formData = new FormData();
       formData.append('file', image);
-      formData.append('upload_preset', CLOUDINARY_UPLOAD_PRESET);
-      formData.append('api_key', '852718378597141');
+      formData.append(
+        'upload_preset',
+        process.env.REACT_APP_CLOUDINARY_UPLOAD_PRESET
+      );
+      formData.append('api_key', process.env.REACT_APP_CLOUDINARY_API_KEY);
 
-      return fetch(CLOUDINARY_UPLOAD_URL, {
+      return fetch(process.env.REACT_APP_CLOUDINARY_UPLOAD_URL, {
         headers: { 'X-Requested-With': 'XMLHttpRequest' },
 
         method: 'POST',
@@ -59,27 +58,24 @@ export const AddStory = () => {
 
   return (
     <>
-      <form createStory={createStory}>
+      <form onSubmit={createStory}>
+        <h1>Add Your Story</h1>
         <Editable text={title} placeholder="Write a title" type="input">
           <input
             type="text"
             name="title"
             placeholder="Write a title"
-            childRef={titleRef}
+            childref={titleRef}
             value={title}
             onChange={(e) => setTitle(e.target.value)}
           />
         </Editable>
-        <Editable
-          text={year}
-          placeholder="What year was this story"
-          type="input"
-        >
+        <Editable text={year} placeholder="Year" type="input">
           <input
             type="text"
             name="year"
             placeholder="Describe the story"
-            childRef={yearRef}
+            childref={yearRef}
             value={year}
             onChange={(e) => setYear(e.target.value)}
           />
@@ -92,7 +88,7 @@ export const AddStory = () => {
           <textarea
             name="description"
             placeholder="Description for the task"
-            childRef={descriptionRef}
+            childref={descriptionRef}
             rows="5"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
